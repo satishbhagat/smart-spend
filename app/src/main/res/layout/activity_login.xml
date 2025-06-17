@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE LinearLayout [
+        <!ELEMENT LinearLayout (TextView|EditText|Button|ProgressBar)*>
+        <!ATTLIST LinearLayout
+                xmlns:android CDATA #REQUIRED
+                xmlns:app CDATA #REQUIRED
+                xmlns:tools CDATA #REQUIRED
+                android:layout_width CDATA #REQUIRED
+                android:layout_height CDATA #REQUIRED
+                android:orientation CDATA #REQUIRED
+                android:gravity CDATA #REQUIRED
+                android:padding CDATA #REQUIRED
+                tools:context CDATA #REQUIRED>
+        <!ELEMENT TextView (#PCDATA)>
+        <!ATTLIST TextView
+                android:id CDATA #IMPLIED
+                android:layout_height CDATA #REQUIRED
+                android:layout_marginBottom CDATA #IMPLIED
+                android:layout_marginTop CDATA #IMPLIED
+                android:layout_width CDATA #REQUIRED
+                android:text CDATA #REQUIRED
+                android:textColor CDATA #IMPLIED
+                android:textSize CDATA #IMPLIED
+                android:textStyle CDATA #IMPLIED>
+        <!ELEMENT EditText (#PCDATA)>
+        <!ATTLIST EditText
+                android:hint CDATA #REQUIRED
+                android:id CDATA #REQUIRED
+                android:inputType CDATA #REQUIRED
+                android:layout_height CDATA #REQUIRED
+                android:layout_marginBottom CDATA #REQUIRED
+                android:layout_width CDATA #REQUIRED>
+        <!ELEMENT Button (#PCDATA)>
+        <!ATTLIST Button
+                android:id CDATA #REQUIRED
+                android:layout_width CDATA #REQUIRED
+                android:layout_height CDATA #REQUIRED
+                android:text CDATA #REQUIRED>
+        <!ELEMENT ProgressBar (#PCDATA)>
+        <!ATTLIST ProgressBar
+                android:id CDATA #REQUIRED
+                android:layout_width CDATA #REQUIRED
+                android:layout_height CDATA #REQUIRED
+                android:visibility CDATA #REQUIRED
+                android:layout_marginTop CDATA #REQUIRED>
+        ]>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:gravity="center"
+              android:padding="16dp"
+              tools:context=".LoginActivity">
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome Back"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="24dp"/>
+
+    <EditText
+            android:id="@+id/et_login_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:layout_marginBottom="12dp"/>
+
+    <EditText
+            android:id="@+id/et_login_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:layout_marginBottom="24dp"/>
+
+    <Button
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Login"/>
+
+    <TextView
+            android:id="@+id/tv_register_link"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Don't have an account? Register here"
+            android:layout_marginTop="16dp"
+            android:textColor="#6200EE"/>
+
+    <ProgressBar
+            android:id="@+id/progressBarLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginTop="16dp"/>
+
+</LinearLayout>

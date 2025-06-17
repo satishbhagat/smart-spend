@@ -1,0 +1,42 @@
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="wrap_content"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   android:layout_marginStart="16dp"
+                                                   android:layout_marginEnd="16dp"
+                                                   android:layout_marginTop="8dp"
+                                                   app:cardCornerRadius="8dp">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp">
+
+        <TextView
+                android:id="@+id/tv_transaction_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Coffee with friends"
+                android:textAppearance="?attr/textAppearanceBody1"
+                android:textStyle="bold" />
+
+        <TextView
+                android:id="@+id/tv_transaction_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_transaction_description"
+                android:text="Food"
+                android:textAppearance="?attr/textAppearanceCaption" />
+
+        <TextView
+                android:id="@+id/tv_transaction_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:text="- ₹150.00"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+    </RelativeLayout>
+</com.google.android.material.card.MaterialCardView>
