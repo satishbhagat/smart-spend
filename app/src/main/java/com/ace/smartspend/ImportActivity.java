@@ -138,7 +138,7 @@ public class ImportActivity extends AppCompatActivity {
             if (cursor != null) {
                 while (cursor.moveToNext()) {
                     String body = cursor.getString(cursor.getColumnIndexOrThrow("body"));
-                    Transaction transaction = SmsParser.parse(body);
+                    Transaction transaction = SmsParser.parse(body, cursor.getLong(cursor.getColumnIndexOrThrow("date")));
                     if (transaction != null) {
                         foundTransactions.add(transaction);
                     }

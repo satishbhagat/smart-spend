@@ -13,6 +13,8 @@ public class Transaction {
     @ServerTimestamp // Automatically set by Firestore on creation
     private Date timestamp;
 
+    private long smsDate;
+
     public Transaction() {
         // Public no-arg constructor needed for Firestore
     }
@@ -65,14 +67,22 @@ public class Transaction {
         this.timestamp = timestamp;
     }
 
-    public Transaction(String userId, String description, Double amount, String type, String category) {
+    public Transaction(String userId, String description, Double amount, String type, String category, long smsDate) {
         this.userId = userId;
         this.description = description;
         this.amount = amount;
         this.type = type;
         this.category = category;
+        this.smsDate= smsDate;
     }
 
-    // --- Add Getters and Setters for all fields ---
+    public long getSmsDate() {
+        return smsDate;
+    }
+
+    public void setSmsDate(long smsDate) {
+        this.smsDate = smsDate;
+    }
+// --- Add Getters and Setters for all fields ---
     // (Right-click -> Generate -> Getters and Setters -> Select all)
 }

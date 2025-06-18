@@ -22,7 +22,7 @@ public class SmsProcessingService extends JobIntentService {
         String smsBody = intent.getStringExtra("sms_body");
         if (smsBody != null) {
             Log.d("SmsProcessingService", "Processing SMS: " + smsBody);
-            Transaction transaction = SmsParser.parse(smsBody);
+            Transaction transaction = SmsParser.parse(smsBody, Long.parseLong(intent.getStringExtra("sms_date")));
             if (transaction != null) {
                 // Found a financial transaction. Save it.
                 TransactionRepository repository = new TransactionRepository();

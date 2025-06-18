@@ -14,7 +14,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.ace.smartspend.model.Transaction;
 import com.ace.smartspend.repo.TransactionRepository;
-
 public class AddTransactionActivity extends AppCompatActivity {
 
     private EditText etAmount, etDescription;
@@ -106,8 +105,10 @@ public class AddTransactionActivity extends AppCompatActivity {
         RadioButton selectedRadioButton = findViewById(selectedTypeId);
         String type = selectedRadioButton.getText().toString().equalsIgnoreCase("income") ? "income" : "expense";
 
-        // The userId will be set in the repository, so we can pass null here.
-        Transaction newTransaction = new Transaction(null, description, amount, type, category);
+        // --- CORRECTED LINE ---
+        // For manual entries, we use the current time as the smsDate.
+        long manualEntryTime = System.currentTimeMillis();
+        Transaction newTransaction = new Transaction(null, description, amount, type, category, manualEntryTime);
 
         // Use the repository to add the transaction
         transactionRepository.addTransaction(newTransaction);
